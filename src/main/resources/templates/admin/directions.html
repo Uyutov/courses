@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/admin/profile}">Go to profile</a>
+<div th:each="direction : ${directions}">
+  <a th:href="@{/admin/direction/{direction_id}(direction_id=${direction.getDirection_id()})}" th:text="${direction.getName()}"></a>
+</div>
+<a th:href="@{/admin/direction/add}">Create new direction</a>
+</body>
+</html>

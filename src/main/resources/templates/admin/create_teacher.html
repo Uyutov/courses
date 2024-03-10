@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="post" th:action="@{/admin/teachers/create}" th:object="${teacher}">
+  <label for="name">Teacher name:</label>
+  <input type="text" th:field="*{name}" id="name">
+  </br>
+  <label for="surname">Teacher surname:</label>
+  <input type="text" th:field="*{surname}" id="surname">
+  </br>
+  <label for="email">Teacher email:</label>
+  <input type="text" th:field="*{email}" id="email">
+  </br>
+  <label for="password">Teacher password:</label>
+  <input type="text" th:field="*{password}" id="password">
+  </br>
+  <label for="country">Teacher country:</label>
+  <input type="text" th:field="*{country}" id="country">
+  </br>
+  <input type="submit" value="Create teacher">
+</form>
+<a th:href="@{/admin/teachers}">Go back to list of teachers</a>
+</body>
+</html>

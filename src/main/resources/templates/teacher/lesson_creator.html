@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/teacher/course/{course_id}/lesson/new(course_id=${course_id})}" th:object="${lesson}">
+    <label for="name">Lesson name:</label>
+    <input type="text" th:field="*{name}" id="name">
+    </br>
+    <label for="content">Content:</label>
+    <input type="text" th:field="*{content}" id="content">
+    </br>
+    <input type="submit" value="Create lesson">
+</form>
+</body>
+</html>

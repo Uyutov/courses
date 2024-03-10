@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/teacher/directions}">To list of directions</a>
+<div th:each="subject : ${subjects}">
+  <a th:href="@{/teacher/direction/subject/{subject_id}(subject_id=${subject.getSubject_id()})}" th:text="${subject.getName()}"></a>
+</div>
+</body>
+</html>

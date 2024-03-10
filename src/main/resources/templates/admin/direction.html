@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/admin/directions}">Go to all directions</a>
+<p th:text="${direction.getName()}"></p>
+<p th:text="${direction.getDescription()}"></p>
+<div th:each="subject:${direction.getSubjects()}">
+  <a th:href="@{/admin/direction/subject/{subject_id}(subject_id=${subject.getSubject_id()})}" th:text="${subject.getName()}"></a>
+</div>
+<a th:href="@{/admin/direction/{direction_id}/subject/add(direction_id=${direction.getDirection_id()})}">Create new subject</a>
+<form th:method="post" th:action="@{/admin/direction/delete/{direction_id}(direction_id=${direction.getDirection_id()})}">
+  <input type="submit" value="Delete direction">
+</form>
+</body>
+</html>

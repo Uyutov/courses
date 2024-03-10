@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="post" th:action="@{/admin/direction/add}" th:object="${direction}" enctype="multipart/form-data">
+    <label for="icon">Icon:</label>
+    <input type="file" name="image" id="icon" accept="image/png, image/jpeg"/>
+    </br>
+    <label for="name">Direction name:</label>
+    <input type="text" th:field="*{name}" id="name">
+    </br>
+    <label for="description">Description:</label>
+    <input type="text" th:field="*{description}" id="description">
+    </br>
+    <input type="submit" value="Send">
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><span th:text="${teacher.getName()}"></span> <span th:text="${teacher.getSurname()}"></span></p>
+<form th:action="@{/logout}" th:method="POST">
+    <input type="submit" value="Logout">
+</form>
+<a th:href="@{/teacher/directions}">Add new course to direction</a>
+</br>
+<a th:href="@{/teacher/courses}">List of your courses</a>
+</body>
+</html>

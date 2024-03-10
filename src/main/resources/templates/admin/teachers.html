@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/admin/profile}">Go to profile</a>
+<div th:each="teacher:${teachers}">
+  <a th:href="@{/admin/teacher/{teacher_id}(teacher_id=${teacher.getTeacher_id()})}">
+    <span th:text="${teacher.getName()}"></span> <span th:text="${teacher.getSurname()}"></span>
+    <span th:text="${teacher.getEmail()}"></span>
+  </a>
+</div>
+<a th:href="@{/admin/teachers/create}">Create new teacher</a>
+
+</body>
+</html>

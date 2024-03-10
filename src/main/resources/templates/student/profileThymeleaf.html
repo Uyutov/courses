@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img th:src="${student.getPhotoImagePath()}"/>
+<p><span th:text="${student.name}"></span> <span th:text="${student.surname}"></span></p>
+<p th:text="${student.email}"></p>
+<a th:href="@{/homepage}">Go to homepage</a>
+</br>
+
+<div th:if="${not #lists.isEmpty(courses)}">
+    <div th:each="course, iStat: ${courses}">
+        <a th:href="@{/student/courses/{course_id}(course_id=${course.getCourse_id()})}">
+            <span th:text="${iStat.count}"></span> <span th:text="${course.getName()}"></span>
+        </a>
+    </div>
+</div>
+<form th:action="@{/logout}" th:method="POST">
+    <input type="submit" value="Logout">
+</form>
+</body>
+</html>

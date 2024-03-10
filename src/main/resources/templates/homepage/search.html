@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Строка поиска с кнопкой</title>
+  <style>
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-container form {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-container input[type="text"] {
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      margin-right: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-container button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="search-container">
+  <form action="/search">
+    <input type="text" placeholder="Поиск..." name="search">
+    <button type="submit">Найти</button>
+  </form>
+</div>
+</body>
+</html>

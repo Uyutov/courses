@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/admin/direction/{direction_id}/subject/add(direction_id=${direction_id})}" th:object="${subject}">
+    <label for="name">Subject name:</label>
+    <input type="text" th:field="*{name}" id="name">
+    </br>
+    <label for="description">Description:</label>
+    <input type="text" th:field="*{description}" id="description">
+    </br>
+    <input type="submit" value="Create subject">
+</form>
+</body>
+</html>

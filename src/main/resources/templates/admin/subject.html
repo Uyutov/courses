@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/admin/direction/{direction_id}(direction_id=${subject.getDirection_id()})}">Back to direction</a>
+<p th:text="${subject.getName()}"></p>
+<p th:text="${subject.getDescription()}"></p>
+<form th:method="POST" th:action="@{admin/direction/{direction_id}/subject/{subject_id}/delete
+(direction_id=${subject.getDescription()}, subject_id=${subject.getSubject_id()})}">
+<input type="submit" value="Delete subject">
+</form>
+</body>
+</html>

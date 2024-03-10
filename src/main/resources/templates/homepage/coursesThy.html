@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/homepage/courses/{subject_id}(subject_id=${subject.getSubject_id()})}" method="get">
+    <input type="text" name="keyword" th:value="${keyword}" placeholder="Find by Owner Name & Shop Type">
+    <button type="submit">Search</button>
+    <div th:each="course : ${subject.getCourses()}">
+        <a th:href="@{/homepage/course/{course_id}(course_id = ${course.getCourse_id()})}" th:text="${course.getName()}"></a>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/admin/teachers}">To teachers list</a>
+<p><span th:text="${teacher.getName()}"></span> <span th:text="${teacher.getSurname()}"></span></p>
+<p th:text="${teacher.getEmail()}"></p>
+<p th:text="${teacher.getCountry()}">
+<form th:method="post" th:action="@{/admin/teacher/delete/{teacher_id}(teacher_id= ${teacher.getTeacher_id()})}">
+  <input type="submit" value="Delete teacher">
+</form>
+</body>
+</html>

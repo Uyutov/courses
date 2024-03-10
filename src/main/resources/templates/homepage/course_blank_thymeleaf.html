@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${course.getName()}"></p>
+<div th:each="lesson, iStat:${course.getLessons()}">
+    <p>
+        <span th:text="${iStat.count}"></span>
+        Lesson
+        <span th:text="${lesson.getName()}"></span>
+    </p>
+    </br>
+    <p th:text="${course.getCourse_id()}"></p>
+</div>
+<form th:method="POST" th:action="@{/student/addCourse/{course_id}(course_id=${course.getCourse_id()})}">
+    <input type="submit" value="subscribe">
+</form>
+</body>
+</html>

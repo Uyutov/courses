@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/teacher/courses}">Go back to list of courses</a>
+<div th:if="${not #lists.isEmpty(course.getLessons())}">
+<div th:each="lesson : ${course.getLessons()}">
+    <a th:href="@{/teacher/course/lesson/{lesson_id}(lesson_id=${lesson.getLesson_id()})}" th:text="${lesson.getName()}"></a>
+</div>
+</div>
+<a th:href="@{/teacher/course/{course_id}/lesson/new(course_id=${course.getCourse_id()})}">Create new lesson</a>
+</body>
+</html>

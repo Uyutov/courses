@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/teacher/profile}">Go to profile</a>
+<div th:each="course : ${courses}">
+  <a th:href="@{/teacher/course/{course_id}(course_id=${course.getCourse_id()})}" th:text="${course.getName()}"></a>
+</div>
+</body>
+</html>

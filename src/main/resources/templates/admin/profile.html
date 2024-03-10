@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin profile</title>
+</head>
+<body>
+<p th:text="${admin.getEmail()}"></p>
+<form th:action="@{/admin/create_json}" th:method="POST">
+    <input type="submit" value="Create json file of students">
+</form>
+<form th:action="@{/admin/create_pdf}" th:method="POST">
+    <input type="submit" value="Create pdf with all admin info">
+</form>
+<form th:action="@{/logout}" th:method="POST">
+    <input type="submit" value="Logout">
+</form>
+<a th:href="@{/admin/directions}">Directions</a>
+</br>
+<a th:href="@{/admin/teachers}">Teachers list</a>
+</body>
+</br>
+<p>Top courses:</p>
+<div th:each="course:${top_courses}">
+     <p th:text="${course.getName()}"></p>
+</div>
+</html>

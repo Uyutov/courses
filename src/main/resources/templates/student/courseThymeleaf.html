@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/student/profile}">Go back to profile</a>
+<div th:each="lesson, iStat:${course.getLessons()}">
+  <a target="_blank" th:href="${lesson.getContent()}"><span th:text="${iStat.count}"> Lesson </span>><span th:text="${lesson.getName()}"></span></a>
+</div>
+<form th:method="post" th:action="@{/student/course/delete/{course_id}(course_id=${course.getCourse_id()})}">
+    <input type="submit" value="Delete!"/>
+</form>
+</body>
+</html>
